@@ -69,7 +69,12 @@ def parse_args(args: list[str]) -> Options:
         nargs="?",
         default=VersionPreference.STABLE,
         help="Version to update to. Possible values are: "
-        + ", ".join(VersionPreference),
+        + ", ".join(VersionPreference) + ''':
+            'skip' will not update the package
+            'branch' by itself will use the default branch
+
+
+        ''',
     )
     parser.add_argument(
         "--override-filename",
